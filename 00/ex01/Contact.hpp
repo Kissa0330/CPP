@@ -19,6 +19,7 @@ public:
 	void	set_phone_number(std::string input);
 	void	set_darkest_secret(std::string input);
 	void	print_contact();
+	void	print_ten_chars(std::string str, char sep);
 };
 
 #endif
