@@ -5,7 +5,7 @@ int main()
 	PhoneBook phone_book;
 	std::string input;
 
-	phone_book.index_init();
+	phone_book.length_init();
 	while(1)
 	{
 		std::cout << "Please type command." << std::endl;

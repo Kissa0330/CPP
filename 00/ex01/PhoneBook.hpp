@@ -6,12 +6,12 @@
 class PhoneBook
 {
 	public:
-		void	index_init();
+		void	length_init();
 		void	add_contact(Contact new_contact);
 		void	ADD();
 		void	SEARCH();
 	private:
 		Contact	contacts[8];
-		int		index;
+		size_t	length;
 };
 #endif

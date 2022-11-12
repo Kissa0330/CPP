@@ -1,23 +1,20 @@
 #include "./PhoneBook.hpp"
 
-void	PhoneBook::index_init()
+void	PhoneBook::length_init()
 {
-	this->index = 0;
+	this->length = 0;
 }
 
 void	PhoneBook::add_contact(Contact new_contact)
 {
-	this->contacts[this->index] = new_contact;
-	if (this->index == 7)
+	if (this->length == 8)
 	{
-		while(this->index != 0)
-		{
-			this->contacts[this->index -1] = this->contacts[this->index];
-			this->index--;
-		}
+		for (size_t i = 0; i < 7; i ++)
+			this->contacts[i] = this->contacts[i + 1];
+		this->length --;
 	}
-	else
-		this->index ++;
+	this->contacts[this->length] = new_contact;
+	this->length ++;
 }
 
 void	PhoneBook::ADD()
@@ -70,17 +67,11 @@ void	PhoneBook::ADD()
 	}
 	new_contact.set_darkest_secret(input);
 	this->add_contact(new_contact);
-	std::cout << "Add contact is successed !" << std::endl;
+	std::cout << "Add contact is successed!" << std::endl;
 }
 
 void	PhoneBook::SEARCH()
 {
-	int	i;
-
-	std::cout << "Please type index." << std::endl;
-	std::cin >> i;
-	if (i >= 0 && i <= this->index && this-> index != 0)
-		this->contacts[i].print_contact();
-	else
-		std::cout << "Error:index size error." << std::endl;
+	for (size_t i = 0; i < this->length; i++)
+		this->contacts[i].print_contact(i);
 }

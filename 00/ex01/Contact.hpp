@@ -18,8 +18,8 @@ public:
 	void	set_nick_name(std::string input);
 	void	set_phone_number(std::string input);
 	void	set_darkest_secret(std::string input);
-	void	print_contact();
-	void	print_ten_chars(std::string str, char sep);
+	void	print_contact(size_t length);
+	void	print_ten_chars(std::string str);
 };
 
 #endif
