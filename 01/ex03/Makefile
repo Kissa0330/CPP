@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/28 19:48:46 by takanoraika       #+#    #+#              #
-#    Updated: 2022/11/28 21:56:16 by takanoraika      ###   ########.fr        #
+#    Created: 2022/11/28 21:57:00 by takanoraika       #+#    #+#              #
+#    Updated: 2022/11/28 21:57:01 by takanoraika      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Brain
-SRCS=main.cpp
+NAME=Human
+SRCS=main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS=$(SRCS:.cpp=.o)
 CC=c++
 CPPFLAGS=-std=c++98 -pedantic -Wall -Wextra -Werror
