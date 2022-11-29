@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 10:48:25 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/11/29 11:19:54 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/11/29 18:38:30 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ const std::string& Weapon::getType( void )
 	return this->type;
 }
 
-void Weapon::setType(std::string name)
+void Weapon::setType(std::string type)
 {
 	this->type = type;
 }

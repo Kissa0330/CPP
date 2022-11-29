@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 10:45:50 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/11/29 11:26:58 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/11/29 18:49:12 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ class HumanB
 {
 private:
 	std::string name;
-	Weapon weapon;
+	Weapon *weapon;
 
 public:
 	HumanB(std::string name);
-	HumanB(std::string name, Weapon weapon);
+	HumanB(std::string name, Weapon& weapon);
 	~HumanB();
 	void attack(void);
-	void setWeapon(Weapon weapon);
+	void setWeapon(Weapon& weapon);
 };
 
 #endif
