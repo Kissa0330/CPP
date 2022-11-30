@@ -6,7 +6,7 @@
 /*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 09:06:44 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/11/30 11:32:55 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/11/30 11:43:06 by takanoraika      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,36 @@ Harl::~Harl(void)
 
 void Harl::debug(void)
 {
-	std::cout << this->level[0] << ":" << this->comment[0] << std::endl;
+	std::cout << this->comment[0] << std::endl << std::endl;
 }
 
 void Harl::info(void)
 {
-	std::cout << this->level[1] << ":" << this->comment[1] << std::endl;
+	std::cout << this->comment[1] << std::endl << std::endl;
 }
 
 void Harl::warning(void)
 {
-	std::cout << this->level[2] << ":" << this->comment[2] << std::endl;
+	std::cout << this->comment[2] << std::endl << std::endl;
 }
 
 void Harl::error(void)
 {
-	std::cout << this->level[3] << ":" << this->comment[3] << std::endl;
+	std::cout << this->comment[3] << std::endl << std::endl;
+}
+
+size_t Harl::getLevel(std::string level)
+{
+	size_t i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (this->level[i].compare(level) == 0)
+			break;
+		i++;
+	}
+	return i;
 }
 
 void Harl::complain(std::string level)
