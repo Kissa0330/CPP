@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 13:59:42 by rtakano           #+#    #+#             */
-/*   Updated: 2022/12/09 14:22:52 by rtakano          ###   ########.fr       */
+/*   Updated: 2022/12/09 18:35:07 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ Fixed::Fixed(void)
 {
 	this->num = 0;
 	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int n)
+{
+	this->num = n << Fixed::dot;
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float n)
+{
+	this->num = (int)roundf(n * (1 << Fixed::dot));
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &origin)
@@ -36,14 +48,28 @@ Fixed &Fixed::operator=(const Fixed &origin)
 	return (*this);
 }
 
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
+{
+	os << fixed.toFloat();
+	return os;
+}
+
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->num;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->num = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+	return (float)this->num / (1 << Fixed::dot);
+}
+
+int Fixed::toInt(void) const
+{
+	return this->num >> Fixed::dot;
 }
