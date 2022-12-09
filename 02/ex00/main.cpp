@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
+/*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 18:38:13 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/11/30 18:42:30 by takanoraika      ###   ########.fr       */
+/*   Created: 2022/12/09 13:59:49 by rtakano           #+#    #+#             */
+/*   Updated: 2022/12/09 14:14:08 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "Fixed.hpp"
 

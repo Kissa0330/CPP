@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+         #
+#    By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 09:04:41 by takanoraika       #+#    #+#              #
-#    Updated: 2022/11/30 18:38:50 by takanoraika      ###   ########.fr        #
+#    Updated: 2022/12/07 13:13:42 by rtakano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

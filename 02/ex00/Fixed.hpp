@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: takanoraika <takanoraika@student.42.fr>    +#+  +:+       +#+        */
+/*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 18:38:08 by takanoraika       #+#    #+#             */
-/*   Updated: 2022/11/30 19:31:11 by takanoraika      ###   ########.fr       */
+/*   Updated: 2022/12/09 14:13:42 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 class Fixed
 {
 private:
-	int	num;
-	int	dot;
+	int					num;
+	const static int	dot = 8;
 public:
 	Fixed(void);
 	Fixed(const Fixed &origin);
