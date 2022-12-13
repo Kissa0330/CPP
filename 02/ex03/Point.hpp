@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 13:59:49 by rtakano           #+#    #+#             */
-/*   Updated: 2022/12/13 20:26:26 by rtakano          ###   ########.fr       */
+/*   Created: 2022/12/13 20:14:02 by rtakano           #+#    #+#             */
+/*   Updated: 2022/12/13 20:37:34 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef POINT_HPP
+#define POINT_HPP
 #include "Fixed.hpp"
 
-int main(void)
+class Point
 {
-	Fixed a;
-	Fixed b(Fixed(5.05f) * Fixed(2));
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max(a, b) << std::endl;
-	return 0;
-}
+private:
+	const Fixed x;
+	const Fixed y;
+public:
+	Point();
+	Point(float x, float y);
+	Point(const Point &origin);
+	~Point();
+	Point &operator=(Point &origin);
+	float getX() const;
+	float getY() const;
+};
+#endif

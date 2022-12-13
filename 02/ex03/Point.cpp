@@ -1,27 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 13:59:49 by rtakano           #+#    #+#             */
-/*   Updated: 2022/12/13 20:26:26 by rtakano          ###   ########.fr       */
+/*   Created: 2022/12/13 20:14:09 by rtakano           #+#    #+#             */
+/*   Updated: 2022/12/13 20:41:02 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
-int main(void)
+Point::Point() : x(0), y(0)
 {
-	Fixed a;
-	Fixed b(Fixed(5.05f) * Fixed(2));
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max(a, b) << std::endl;
-	return 0;
+}
+
+Point::Point(float x, float y) : x(x), y(y)
+{
+}
+
+Point::Point(const Point &origin) : x(origin.getX()), y(origin.getY())
+{
+}
+
+Point::~Point()
+{
+}
+
+Point &Point::operator=(Point &origin)
+{
+	return (origin);
+}
+
+float Point::getX(void) const
+{
+	return this->x.toFloat();
+}
+
+float Point::getY(void) const
+{
+	return this->y.toFloat();
 }

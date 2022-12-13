@@ -58,5 +58,8 @@
 		"stack": "cpp",
 		"filesystem": "cpp",
 		"cmath": "cpp"
-	}
+	},
+	"cSpell.words": [
+		"takanoraika"
+	]
 }
