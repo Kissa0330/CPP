@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 13:59:42 by rtakano           #+#    #+#             */
-/*   Updated: 2022/12/09 18:35:07 by rtakano          ###   ########.fr       */
+/*   Updated: 2022/12/13 13:44:48 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,135 @@
 Fixed::Fixed(void)
 {
 	this->num = 0;
-	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int n)
 {
 	this->num = n << Fixed::dot;
-	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float n)
 {
 	this->num = (int)roundf(n * (1 << Fixed::dot));
-	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &origin)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	this->num = origin.getRawBits();
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &origin)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	this->num = origin.getRawBits();
 	return (*this);
+}
+
+bool Fixed::operator<(const Fixed &x)
+{
+	bool ret;
+
+	ret = this->num < x.getRawBits();
+	return ret;
+}
+
+bool Fixed::operator>(const Fixed &x)
+{
+	bool ret;
+
+	ret = this->num > x.getRawBits();
+	return ret;
+}
+
+bool Fixed::operator<=(const Fixed &x)
+{
+	bool ret;
+
+	ret = this->num <= x.getRawBits();
+	return ret;
+}
+
+bool Fixed::operator>=(const Fixed &x)
+{
+	bool ret;
+
+	ret = this->num >= x.getRawBits();
+	return ret;
+}
+
+bool Fixed::operator==(const Fixed &x)
+{
+	bool ret;
+
+	ret = this->num == x.getRawBits();
+	return ret;
+}
+
+bool Fixed::operator!=(const Fixed &x)
+{
+	bool ret;
+
+	ret = this->num != x.getRawBits();
+	return ret;
+}
+
+Fixed Fixed::operator+(const Fixed &x)
+{
+	Fixed ret((this->num + x.getRawBits()) / (float)(1 << this->dot));
+	return ret;
+}
+
+Fixed Fixed::operator-(const Fixed &x)
+{
+	Fixed ret((this->num - x.getRawBits()) / (float)(1 << this->dot));
+	return ret;
+}
+
+Fixed Fixed::operator*(const Fixed &x)
+{
+	Fixed ret((this->getRawBits() * x.getRawBits() / (float)(1 << this->dot) / (float)(1 << this->dot)));
+	return ret;
+}
+
+Fixed Fixed::operator/(const Fixed &x)
+{
+	if (this->num == 0)
+	{
+		Fixed ret(0);
+		std::cout << "Error:Zero division is not defined" << std::endl;
+		return ret;
+	}
+	Fixed ret((float)this->num / (float)x.getRawBits());
+	return ret;
+}
+
+Fixed &Fixed::operator++()
+{
+	this->num++;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed ret = *this;
+	++*this;
+	return ret;
+}
+
+Fixed &Fixed::operator--()
+{
+	this->num--;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed ret = *this;
+	--*this;
+	return ret;
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
@@ -72,4 +170,28 @@ float Fixed::toFloat(void) const
 int Fixed::toInt(void) const
 {
 	return this->num >> Fixed::dot;
+}
+
+Fixed &Fixed::min(Fixed &x, Fixed &y)
+{
+	if (x < y)
+		return x;
+	return y;
+}
+
+Fixed &Fixed::max(Fixed &x, Fixed &y)
+{
+	if (x < y)
+		return y;
+	return x;
+}
+
+const Fixed &Fixed::min(const Fixed &x, const Fixed &y)
+{
+	return (const Fixed &)Fixed::min((Fixed &)x, (Fixed &)y);
+}
+
+const Fixed &Fixed::max(const Fixed &x, const Fixed &y)
+{
+	return (const Fixed &)Fixed::max((Fixed &)x, (Fixed &)y);
 }
