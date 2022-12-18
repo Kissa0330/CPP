@@ -6,11 +6,11 @@
 #    By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 09:04:41 by takanoraika       #+#    #+#              #
-#    Updated: 2022/12/13 20:26:15 by rtakano          ###   ########.fr        #
+#    Updated: 2022/12/18 19:26:37 by rtakano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=Fixed
+NAME=bsp
 SRCS=main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS=$(SRCS:.cpp=.o)
 CC=c++
