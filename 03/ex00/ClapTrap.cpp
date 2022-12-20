@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:06:42 by rtakano           #+#    #+#             */
-/*   Updated: 2022/12/20 17:49:19 by rtakano          ###   ########.fr       */
+/*   Updated: 2022/12/20 21:08:28 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (amount >= this->hit_point)
+	if ((int)amount >= this->hit_point)
 	{
 		this->hit_point = 0;
 	}
