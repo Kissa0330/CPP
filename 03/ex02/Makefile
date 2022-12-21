@@ -6,12 +6,12 @@
 #    By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 09:04:41 by takanoraika       #+#    #+#              #
-#    Updated: 2022/12/21 15:18:03 by rtakano          ###   ########.fr        #
+#    Updated: 2022/12/21 19:47:40 by rtakano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=ScavTrap
-SRCS=main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME=FragTrap
+SRCS=main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS=$(SRCS:.cpp=.o)
 CC=c++
 CPPFLAGS=-std=c++98 -pedantic -Wall -Wextra -Werror

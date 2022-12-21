@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 21:17:43 by rtakano           #+#    #+#             */
-/*   Updated: 2022/12/21 15:19:36 by rtakano          ###   ########.fr       */
+/*   Updated: 2022/12/21 19:42:34 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &origin)
 	this->hit_point = 100;
 	this->energy_point = 50;
 	this->attack_damage = 20;
-	std::cout << "ScavTrap copy assignment constructor is called." << std::endl;
+	std::cout << "ScavTrap copy assignment operator is called." << std::endl;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 17:17:24 by rtakano           #+#    #+#             */
-/*   Updated: 2022/12/21 15:42:52 by rtakano          ###   ########.fr       */
+/*   Updated: 2022/12/21 19:46:46 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int main(void)
 {
+	FragTrap a("rtakano");
+
+	a.highFivesGuys();
 	return 0;
 }
