@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 21:17:43 by rtakano           #+#    #+#             */
-/*   Updated: 2022/12/21 19:42:49 by rtakano          ###   ########.fr       */
+/*   Updated: 2022/12/25 19:12:39 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ScavTrap::ScavTrap(std::string name)
 	std::cout << "ScavTrap default constructor is called." << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &origin)
+ScavTrap::ScavTrap(const ScavTrap &origin) : ClapTrap(origin)
 {
 	this->name = origin.name;
 	this->hit_point = 100;
