@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 14:58:04 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 17:24:40 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/02/26 17:34:40 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,43 @@ void operator_test()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
+}
+
+void upGrade_test()
+{
+	try
+	{
+		Bureaucrat test("test", 2);
+		test.upGrade();
+		std::cout << test;
+		test.upGrade();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
+
+void downGrade_test()
+{
+	try
+	{
+		Bureaucrat test("test", 149);
+		test.downGrade();
+		std::cout << test;
+		test.downGrade();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 int main()
 {
 	throw_test();
 	operator_test();
+	upGrade_test();
+	downGrade_test();
 	return 0;
 }
