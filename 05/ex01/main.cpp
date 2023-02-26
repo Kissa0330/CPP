@@ -6,69 +6,42 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 14:58:04 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 18:47:14 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/02/26 18:59:20 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 void throw_test()
 {
 	try
 	{
-		Bureaucrat test1("test",151);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat test2("test",0);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat test3("test",1);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat test4("test",150);
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-}
-
-void operator_test()
-{
-	try
-	{
-		Bureaucrat test("test", 1);
-		std::cout << test;
+		Form test1("test1", 151, 150);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
-}
-
-void upGrade_test()
-{
 	try
 	{
-		Bureaucrat test("test", 2);
-		test.upGrade();
-		std::cout << test;
-		test.upGrade();
+		Form test2("test2", 150, 151);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Form test3("test3", 0, 1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Form test4("test4", 1, 0);
 	}
 	catch(const std::exception& e)
 	{
@@ -76,14 +49,16 @@ void upGrade_test()
 	}
 }
 
-void downGrade_test()
+void sign_test()
 {
 	try
 	{
-		Bureaucrat test("test", 149);
-		test.downGrade();
-		std::cout << test;
-		test.downGrade();
+		Form test1("test1", 149, 149);
+		Bureaucrat test2("test2", 149);
+		test2.signForm(test1);
+		std::cout << test1.getIsSigned() << std::endl;
+		Bureaucrat test3("test3", 150);
+		test3.signForm(test1);
 	}
 	catch(const std::exception& e)
 	{
@@ -94,8 +69,6 @@ void downGrade_test()
 int main()
 {
 	throw_test();
-	operator_test();
-	upGrade_test();
-	downGrade_test();
+	sign_test();
 	return 0;
 }

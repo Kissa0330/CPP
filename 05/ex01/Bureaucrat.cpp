@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 14:58:01 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 19:19:53 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/02/26 19:19:17 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,19 @@ void Bureaucrat::downGrade()
 		throw GradeTooHighException();
 	}
 	this->grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &origin)
