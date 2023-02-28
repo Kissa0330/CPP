@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 23:03:40 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 03:10:43 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/02/28 22:49:05 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ void deepCopyTest()
 	cat2.changeIdea("this is cat2", 0);
 	cat1.printIdea(0);
 	cat2.printIdea(0);
+	Dog dog3 = Dog();
+	{
+		Dog tmp = dog3;
+	}
 }
 
 int main()

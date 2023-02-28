@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:16:02 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 03:09:57 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/02/28 22:12:56 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,28 @@
 Dog::Dog()
 {
 	this->_type = "Dog";
+	this->brain = new Brain();
 	std::cout << "Dog default constructor is called." << std::endl;
 }
 
 Dog::Dog(const Dog &origin) : Animal("Dog")
 {
 	this->_type = origin._type;
+	this->brain = new Brain(*(origin.brain));
 	std::cout << "Dog copy constructor is called." << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &origin)
 {
 	this->_type = origin._type;
+	this->brain = new Brain(*(origin.brain));
 	std::cout << "Dog copy operator is called." << std::endl;
 	return (*this);
 }
 
 Dog::~Dog()
 {
+	delete this->brain;
 	std::cout << "Dog destructor is called" << std::endl;
 }
 
@@ -43,10 +47,10 @@ void Dog::makeSound() const
 
 void Dog::printIdea(int index) const
 {
-	std::cout << this->brain.idea[index] << std::endl;
+	std::cout << this->brain->idea[index] << std::endl;
 }
 
 void Dog::changeIdea(std::string idea, int index)
 {
-	this->brain.idea[index] = idea;
+	this->brain->idea[index] = idea;
 }

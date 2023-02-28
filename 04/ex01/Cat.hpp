@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:10:49 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 03:10:12 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/02/28 20:28:05 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Cat : public Animal
 {
 private:
-	Brain brain;
+	Brain *brain;
 public:
 	Cat();
 	Cat(const Cat &origin);
