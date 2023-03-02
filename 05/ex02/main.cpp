@@ -6,69 +6,59 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 14:58:04 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 18:59:20 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/02 14:07:38 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-void throw_test()
+void abstract_test()
 {
-	try
-	{
-		Form test1("test1", 151, 150);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Form test2("test2", 150, 151);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Form test3("test3", 0, 1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		Form test4("test4", 1, 0);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	// AForm test;
 }
 
-void sign_test()
+void exe_Shrubbery_test()
 {
-	try
-	{
-		Form test1("test1", 149, 149);
-		Bureaucrat test2("test2", 149);
-		test2.signForm(test1);
-		std::cout << test1.getIsSigned() << std::endl;
-		Bureaucrat test3("test3", 150);
-		test3.signForm(test1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	ShrubberyCreationForm test = ShrubberyCreationForm("test");
+	Bureaucrat test1 = Bureaucrat("test1", 146);
+	Bureaucrat test2 = Bureaucrat("test2", 130);
+	test2.executeForm(test);
+	test1.signForm(test);
+	test2.signForm(test);
+	test2.executeForm(test);
+}
+
+void exe_Presidential_test()
+{
+	PresidentialPardonForm test = PresidentialPardonForm("test");
+	Bureaucrat test1 = Bureaucrat("test1", 26);
+	Bureaucrat test2 = Bureaucrat("test2", 5);
+	test2.executeForm(test);
+	test1.signForm(test);
+	test2.signForm(test);
+	test2.executeForm(test);
+}
+
+void exe_Robotomy_test()
+{
+	RobotomyRequestForm test = RobotomyRequestForm("test");
+	Bureaucrat test1 = Bureaucrat("test1", 73);
+	Bureaucrat test2 = Bureaucrat("test2", 45);
+	test2.executeForm(test);
+	test1.signForm(test);
+	test2.signForm(test);
+	test2.executeForm(test);
 }
 
 int main()
 {
-	throw_test();
-	sign_test();
+	abstract_test();
+	exe_Shrubbery_test();
+	exe_Presidential_test();
+	exe_Robotomy_test();
 	return 0;
 }

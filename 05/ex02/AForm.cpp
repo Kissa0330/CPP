@@ -53,22 +53,17 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->reqSignGrade)
 	{
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 	}
 	this->isSigned = true;
 }
 
-void AForm::execute(const Bureaucrat &executor) const
-{
-
-}
-
-bool AForm::getIsSigned()
+bool AForm::getIsSigned() const
 {
 	return this->isSigned;
 }
 
-std::string AForm::getName()
+std::string AForm::getName() const
 {
 	return this->name;
 }

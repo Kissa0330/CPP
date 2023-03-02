@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 14:57:58 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 19:30:37 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/01 19:46:26 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class AForm;
 
@@ -37,8 +37,8 @@ public:
 	int getGrade() const;
 	void upGrade();
 	void downGrade();
-	void signForm(Form &form);
-	void executeForm(const Form &form);
+	void signForm(AForm &form);
+	void executeForm(const AForm &form);
 
 	class GradeTooHighException : public std::exception
 	{

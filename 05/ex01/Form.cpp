@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:43:19 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 19:19:33 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/01 22:41:03 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->reqSignGrade)
 	{
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 	}
 	this->isSigned = true;
 }
