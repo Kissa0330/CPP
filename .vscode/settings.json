@@ -57,7 +57,9 @@
 		"fstream": "cpp",
 		"stack": "cpp",
 		"filesystem": "cpp",
-		"cmath": "cpp"
+		"cmath": "cpp",
+		"numeric": "cpp",
+		"random": "cpp"
 	},
 	"cSpell.words": [
 		"AFORM",
