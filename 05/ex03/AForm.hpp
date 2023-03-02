@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:43:16 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/02 15:47:48 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/02 17:59:13 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ public:
 	virtual void execute(const Bureaucrat &executor) const = 0;
 	bool getIsSigned() const;
 	std::string getName() const;
+	int getReqSignGrade() const;
+	int getReqExeGrade() const;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -62,4 +64,5 @@ public:
 		}
 	};
 };
+std::ostream &operator<<(std::ostream &os, const AForm &origin);
 #endif

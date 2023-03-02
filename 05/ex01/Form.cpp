@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:43:19 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/01 22:41:03 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/02 17:54:43 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,28 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 	this->isSigned = true;
 }
 
-bool Form::getIsSigned()
+bool Form::getIsSigned() const
 {
 	return this->isSigned;
 }
 
-std::string Form::getName()
+std::string Form::getName() const
 {
 	return this->name;
+}
+
+int Form::getReqSignGrade() const
+{
+	return this->reqSignGrade;
+}
+
+int Form::getReqExeGrade() const
+{
+	return this->reqExeGrade;
+}
+
+std::ostream &operator<<(std::ostream &os, const Form &origin)
+{
+	os << "Form name:" << origin.getName() << " Form isSigned:" << origin.getIsSigned() << " Form reqSignGrade:" << origin.getReqSignGrade() << " Form reqExeGrade:" << origin.getReqExeGrade() << std::endl;
+	return os;
 }

@@ -67,3 +67,18 @@ std::string AForm::getName() const
 {
 	return this->name;
 }
+int AForm::getReqSignGrade() const
+{
+	return this->reqSignGrade;
+}
+
+int AForm::getReqExeGrade() const
+{
+	return this->reqExeGrade;
+}
+
+std::ostream &operator<<(std::ostream &os, const AForm &origin)
+{
+	os << "Form name:" << origin.getName() << " Form isSigned:" << origin.getIsSigned() << " Form reqSignGrade:" << origin.getReqSignGrade() << " Form reqExeGrade:" << origin.getReqExeGrade() << std::endl;
+	return os;
+}

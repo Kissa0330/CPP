@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 14:58:04 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 18:59:20 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/02 17:56:36 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,16 @@ void sign_test()
 	}
 }
 
+void output_test()
+{
+	Form test1("test1", 150, 140);
+	std::cout << test1;
+}
+
 int main()
 {
 	throw_test();
 	sign_test();
+	output_test();
 	return 0;
 }
