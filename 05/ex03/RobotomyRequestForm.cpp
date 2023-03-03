@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 22:41:32 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/02 14:16:25 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/03 21:18:26 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
+	std::srand( time(NULL) );
 	if (!this->isSigned)
 	{
 		throw RobotomyRequestForm::IsSignFalseException();
@@ -54,7 +55,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 	}
 
 	std::cout << "Dddddddddd....." << std::endl;
-	if (rand() % 100 < 50)
+	if (std::rand() % 100 < 50)
 	{
 		std::cout << this->target << "'s Robotomy is succeed!" << std::endl;
 	}
