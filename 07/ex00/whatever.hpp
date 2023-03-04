@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:11:03 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/04 17:34:32 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/04 17:39:09 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define WHATEVER_HPP
 
 template <typename T>
-void Swap(T &a, T &b) {
+void swap(T &a, T &b) {
     T tmp;
 	tmp = a;
 	a = b;
@@ -22,7 +22,7 @@ void Swap(T &a, T &b) {
 }
 
 template <typename T>
-T &Min(T &a, T &b) {
+T &min(T &a, T &b) {
 	if (a < b)
 	{
 		return a;
@@ -34,7 +34,7 @@ T &Min(T &a, T &b) {
 }
 
 template <typename T>
-T &Max(T &a, T &b) {
+T &max(T &a, T &b) {
 	if (a > b)
 	{
 		return a;
