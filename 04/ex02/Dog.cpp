@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:16:02 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/02 17:46:22 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/04 22:02:38 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ Dog::Dog(const Dog &origin) : Animal("Dog")
 
 Dog &Dog::operator=(const Dog &origin)
 {
-	this->_type = origin._type;
-	delete this->brain;
-	this->brain = new Brain(*(origin.brain));
+	if (this != &origin)
+	{
+		this->_type = origin._type;
+		delete this->brain;
+		this->brain = new Brain(*(origin.brain));
+	}
 	std::cout << "Dog copy operator is called." << std::endl;
 	return (*this);
 }

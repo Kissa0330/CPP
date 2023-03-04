@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:16:02 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/02 17:45:57 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/04 22:02:20 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ Cat::Cat(const Cat &origin) : Animal("Cat")
 
 Cat &Cat::operator=(const Cat &origin)
 {
-	this->_type = origin._type;
-	delete this->brain;
-	this->brain = new Brain(*(origin.brain));
+	if (this != &origin)
+	{
+		this->_type = origin._type;
+		delete this->brain;
+		this->brain = new Brain(*(origin.brain));
+	}
 	std::cout << "Cat copy operator is called." << std::endl;
 	return (*this);
 }
