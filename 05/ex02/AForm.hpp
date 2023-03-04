@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:43:16 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/02 17:59:11 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/04 22:16:49 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,17 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw()
-		{
-			return ("grade is too high.");
-		}
+		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw()
-		{
-			return ("grade is too low.");
-		}
+		virtual const char *what() const throw();
 	};
 	class IsSignFalseException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw()
-		{
-			return ("isSign is false.");
-		}
+		virtual const char *what() const throw();
 	};
 };
 std::ostream &operator<<(std::ostream &os, const AForm &origin);

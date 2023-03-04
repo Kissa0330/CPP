@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 14:57:58 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/02 17:49:40 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/04 22:13:23 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,12 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw()
-		{
-			return ("Bureaucrat::GradeTooLowException : Grade is too high.");
-		}
+		virtual const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw()
-		{
-			return ("Bureaucrat::GradeTooLowException : Grade is too low.");
-		}
+		virtual const char *what() const throw();
 	};
 };
 

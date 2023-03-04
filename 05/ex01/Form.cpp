@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:43:19 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/02 17:54:43 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/04 22:15:39 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,14 @@ std::ostream &operator<<(std::ostream &os, const Form &origin)
 {
 	os << "Form name:" << origin.getName() << " Form isSigned:" << origin.getIsSigned() << " Form reqSignGrade:" << origin.getReqSignGrade() << " Form reqExeGrade:" << origin.getReqExeGrade() << std::endl;
 	return os;
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("grade is too high.");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ("grade is too low.");
 }

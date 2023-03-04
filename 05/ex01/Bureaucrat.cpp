@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 14:58:01 by rtakano           #+#    #+#             */
-/*   Updated: 2023/02/26 19:19:17 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/04 22:13:14 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,14 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &origin)
 {
 	os << origin.getName() << " bureaucrat grade " << origin.getGrade() << std::endl;
 	return os;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Bureaucrat::GradeTooHighException : Grade is too high.");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Bureaucrat::GradeTooLowException : Grade is too low.");
 }

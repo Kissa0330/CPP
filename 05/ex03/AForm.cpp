@@ -83,3 +83,18 @@ std::ostream &operator<<(std::ostream &os, const AForm &origin)
 	os << "Form name:" << origin.getName() << " Form isSigned:" << origin.getIsSigned() << " Form reqSignGrade:" << origin.getReqSignGrade() << " Form reqExeGrade:" << origin.getReqExeGrade() << std::endl;
 	return os;
 }
+
+const char* AForm::GradeTooHighException::what() const throw()
+{
+	return ("grade is too high.");
+}
+
+const char* AForm::GradeTooLowException::what() const throw()
+{
+	return ("grade is too low.");
+}
+
+const char* AForm::IsSignFalseException::what() const throw()
+{
+	return ("isSign is false.");
+}
