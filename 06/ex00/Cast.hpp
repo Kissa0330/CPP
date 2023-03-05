@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:17:15 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/03 15:00:08 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/05 17:42:09 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <stdlib.h>
 
 class Cast
 {

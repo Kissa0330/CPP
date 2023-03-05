@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:18:11 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/03 18:00:10 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/05 17:41:39 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void printTargetChar(std::string target)
 
 void printTargetInt(std::string target)
 {
-	int tgt = std::stoi(target);
+	int tgt = atoi(target.c_str());
 	std::cout << "char: ";
 	if (tgt > 31 && tgt < 127)
 	{
