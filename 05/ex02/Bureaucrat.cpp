@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 14:58:01 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/04 22:14:07 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/08 12:42:29 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void Bureaucrat::upGrade()
 {
 	if (this->grade <= 1)
 	{
-		throw GradeTooLowException();
+		throw GradeTooHighException();
 	}
 	this->grade--;
 }
@@ -73,7 +73,7 @@ void Bureaucrat::downGrade()
 {
 	if (grade >= 150)
 	{
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 	}
 	this->grade++;
 }
