@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 17:33:03 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/05 18:53:14 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/08 13:12:06 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,16 @@ private:
 	std::vector<int> arr;
 
 public:
-	span();
-	span(unsigned int size);
-	span(const Span &origin);
-	~span();
+	Span();
+	Span(unsigned int size);
+	Span(const Span &origin);
+	~Span();
 	Span &operator=(const Span &origin);
 	void addNumber(const int n);
 	void addNumbers(const int n, const int count);
 	int longestSpan();
 	int shortestSpan();
+	void printArr() const;
 	class SpanIsFull : public std::exception
 	{
 	public:
