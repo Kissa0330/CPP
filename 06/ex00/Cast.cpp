@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:18:11 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/05 17:41:39 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/08 15:27:43 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void printTargetInt(std::string target)
 
 void printTargetDouble(std::string target)
 {
-	int tgt = static_cast<int>(std::stod(target));
+	int tgt = static_cast<int>(atof(target.c_str()));
 	std::cout << "char: ";
 	if (tgt > 31 && tgt < 127)
 	{
@@ -85,14 +85,14 @@ void printTargetDouble(std::string target)
 		std::cout << "non displayable" << std::endl;
 	}
 	std::cout << "int: " << tgt << std::endl;
-	std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(std::stod(target)) << "f" << std::endl;
-	std::cout << "double: " << std::stod(target) << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(atof(target.c_str())) << "f" << std::endl;
+	std::cout << "double: " << atof(target.c_str()) << std::endl;
 }
 
 void printTargetFloat(std::string target)
 {
-	target.pop_back();
-	int tgt = static_cast<int>(std::stof(target));
+	target[target.length() - 1] = '\0';
+	int tgt = static_cast<int>(static_cast<float>(atof(target.c_str())));
 	std::cout << "char: ";
 	if (tgt > 31 && tgt < 127)
 	{
@@ -103,8 +103,8 @@ void printTargetFloat(std::string target)
 		std::cout << "non displayable" << std::endl;
 	}
 	std::cout << "int: " << tgt << std::endl;
-	std::cout << std::fixed << std::setprecision(1) << "float: " <<  std::stof(target) << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(std::stof(target)) << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << "float: " << static_cast<float>(atof(target.c_str())) << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(static_cast<float>(atof(target.c_str()))) << std::endl;
 }
 
 void printTargetNon(std::string target)

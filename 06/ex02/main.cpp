@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 18:47:08 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/03 21:04:11 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/08 15:37:57 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime> 
+#include <typeinfo>
 
 Base *generate(void)
 {
@@ -58,7 +59,7 @@ void identify(Base &p)
 		(void)dynamic_cast<A &>(p);
 		std::cout << "A" << std::endl;
 	}
-	catch (const std::bad_cast&)
+	catch (std::bad_cast)
 	{
 	}
 
@@ -67,7 +68,7 @@ void identify(Base &p)
 		(void)dynamic_cast<B &>(p);
 		std::cout << "B" << std::endl;
 	}
-	catch (const std::bad_cast&)
+	catch (std::bad_cast)
 	{
 	}
 
@@ -76,7 +77,7 @@ void identify(Base &p)
 		(void)dynamic_cast<C &>(p);
 		std::cout << "C" << std::endl;
 	}
-	catch (const std::bad_cast&)
+	catch (std::bad_cast)
 	{
 	}
 }
