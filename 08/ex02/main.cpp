@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:28:19 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/08 22:54:45 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/12 20:52:11 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int main()
 		MutantStack<int> *mstack2 = NULL;
 
 		(*mstack1).push(1);
-		mstack1 = mstack2;
 		mstack2 = mstack1;
+		mstack1 = mstack2;
 		delete mstack1;
 	}
 	return 0;

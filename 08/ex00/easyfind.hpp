@@ -6,7 +6,7 @@
 /*   By: rtakano <rtakano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 22:27:19 by rtakano           #+#    #+#             */
-/*   Updated: 2023/03/05 17:16:51 by rtakano          ###   ########.fr       */
+/*   Updated: 2023/03/12 20:45:25 by rtakano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define EASYFIND_HPP
 
 #include <algorithm>
+#include <stdexcept>
 
 template <typename T>
 typename T::iterator easyfind(T &arr, int needle)
